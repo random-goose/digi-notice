@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image and Text Upload</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #uploadForm,
+  #textForm {
+    width: 45%;
+  }
+
+  #uploadForm {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px auto;
+  }
+
+  #uploadForm label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #uploadForm input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  #uploadForm button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #009578;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #textForm {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px auto;
+  }
+
+  #textForm label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #textForm textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  #textForm button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #009578;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #fileList {
+    margin-top: 20px;
+  }
+
+  .file {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px auto;
+  }
+
+  .file .file-name {
+    font-weight: bold;
+  }
+
+  .file .file-size {
+    color: #999;
+  }
+
+  .file .file-delete {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #009578;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .balayya img {
+    width: 300px;
+  }
+
+  .previews {
+    display: flex;
+    width: 300px;
+    height: auto;
+    border: 1px black;
+  }
+</style>
+
+<body>
+
+  <h1>BVRIT DIGITAL NOTICE BOARD</h1>
+
+  <div class="container">
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="imageInput">Upload Image:</label>
+      <input type="file" name="file" id="imageInput" accept="image/*">
+      <button type="button" onclick="uploadImage()">Upload Image</button>
+    </form>
+
+    <form id="textForm">
+      <label for="textInput">Enter Text:</label>
+      <textarea name="text" id="textInput" rows="4" cols="50"></textarea>
+      <button type="button" onclick="convertToTextFile()">Upload Text</button>
+    </form>
+  </div>
+
+  <div class="previews" id="fileList"></div>
+
+  <script src="uploadApp.js"></script>
+
+  <script>
+    const elements = document.querySelectorAll('pre, pre *');
+
+    elements.forEach(element => {
+      element.classList.add('your-class-name');
+    });
+
+  </script>
+
+</body>
+
+</html>
